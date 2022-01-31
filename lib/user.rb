@@ -12,4 +12,12 @@ class User
     return @@all_users.to_s
   end
 
+  #def self.find_via_email
+   # @@all_users.each do |user|
+    #  if user.email == @email
+     #   return user.age
+     # end
+    #end
+  #end
+
 end

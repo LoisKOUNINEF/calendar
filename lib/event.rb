@@ -31,7 +31,7 @@ class Event
     puts "Start Date and Time : #{@start_date}."
     puts "Event Duration : #{@duration} minutes."
     puts "End Date and Time : #{@end_date}."
-    print [attendees].to_s.delete'"[]"'
+    print [attendees].to_s.delete'"[]'
   end
 
 end
