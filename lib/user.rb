@@ -1,4 +1,3 @@
-require 'pry'
 class User
   attr_accessor :email, :age
   @@all_users = []
@@ -12,5 +11,5 @@ class User
   def self.all
     return @@all_users.to_s
   end
-binding.pry
+
 end
