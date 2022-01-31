@@ -11,7 +11,7 @@ class Event
   end
 
   def postpone_24h
-    @start_date = @start_date + 86400 # ou @start_date += 24*60*60
+    @start_date = @start_date + 86400 #(24*60*60=86400)
   end
 
   def is_past
