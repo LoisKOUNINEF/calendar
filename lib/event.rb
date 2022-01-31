@@ -1,35 +1,39 @@
 class Event
-  attr_accessor :start_date
-  attr_accessor :duration
-  attr_accessor :title
-  attr_accessor :attendees
+  attr_accessor :start_date, :duration, :title, :attendees
 
-  def initialize(start_date_input,duration_input,title_input,attendees_input)
-    @start_date = Time.parse(start_date_input)
-    @duration = duration_input.to_i
-    @title = title_input
-    @attendees = attendees_input.Array #faut rappeler user.email en écrivant le nom........mais comment?
+  def initialize(start_date,duration,title,attendees)
+    @attendees = []
+    @start_date = Time.parse(start_date)
+    @duration = duration
+    @title = title
+    @attendees = attendees
   end
 
-  def postpone_24h(start_date)
-    @start_date + 86400
+  def postpone_24h
+    @start_date + 86400 # ou @start_date += 24*60*60
   end
 
-  def end_date(start_date,duration)
-    end_date = @start_date + @duration*60
+  def end_date
+    end_date = @start_date + (@duration * 60)
   end
 
-  def is_past?(start_date,)
-     start_date < current_day?
+  def is_past
+     return @start_date < Time.now
   end
 
-  def is_future?()
+  def is_future
+    return !is_past
   end
 
-  def is_soon?()
-  end
+  #def is_soon
 
-  def event_to_s()
+  #end
+
+  def event_to_s
+    puts "Event Title : #{@title}."
+    puts "Start Date and Time : #{start_date}."
+    puts "Event Duration : #{duration} minutes."
+    puts "End Date and Time : #{end_date}."
   end
 
 end

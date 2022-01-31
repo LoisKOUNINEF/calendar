@@ -1,16 +1,16 @@
+require 'pry'
 class User
-  attr_accessor :email
-  attr_accessor :age
-  @@all_users = 0
+  attr_accessor :email, :age
+  @@all_users = []
 
   def initialize(email_to_save,age_to_save)
     @email = email_to_save
     @age = age_to_save.to_i
-    @@all_users = all_users + self
+    @@all_users << self
   end
 
   def self.all
-    return @@all_users
+    return @@all_users.to_s
   end
-
+binding.pry
 end
